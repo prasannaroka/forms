@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="output.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Custom styling */
+    .hidden {
+      display: none;
+    }
+
+    .custom-hidden {
+      display: none;
+    }
+
+    .custom-hide {
+      display: none;
+    }
+
+    .custom-hidden-class {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
+    <h1 class="text-4xl text-center font-semibold mb-4">
+      Plant Diagnostics Form
+    </h1>
+    <h5 class="text-xl text-center mb-4">Sample Check-in</h5>
+
+    <hr class="bg-green-500" />
+    <form>
+      <div class="flex justify-between items-center mt-7">
+        <div class="flex">
+          <span class="font-semibold text-[15px]">Lab<span class="text-red-500">*</span> :
+          </span>
+          <div class="pl-2">
+            <select id="subject" name="sgitubject"
+              class="text-[14px] text-green-500 w-56 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+              <option value="general">Please Select</option>
+              <option value="Pathology">
+                National Plant Pathology Research Centre
+              </option>
+              <option value="Entomology">
+                National Entomology Research Centre
+              </option>
+              <option value="Lab">Central Lab</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex justify-between">
+          <span class="font-semibold text-[15px]">Submitter<span class="text-red-500">*</span> :</span>
+          <div class="pl-2">
+            <select id="subject" name="subject"
+              class="text-[14px] text-green-500 w-44 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+              <option value="general">Please Select</option>
+              <option value="support">Ram Bahadur</option>
+              <option value="feedback">Hari Shah</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <h2 class="font-semibold text-[15px]">
+            Date<span class="text-red-500">*</span> :
+          </h2>
+          <div class="pl-2">
+            <input type="date" id="date" name="date"
+              class="text-[14px] text-green-500 w-28 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+          </div>
+        </div>
+      </div>
+      <!--  -->
+
+      <h3 class="text-xl font-semibold mt-8 mb-4">
+        Diagnostics Required<span class="text-red-500">*</span>
+      </h3>
+      <hr />
+      <!--  -->
+      <div class="flex justify-between items-center mt-7">
+        <div class="flex">
+          <span class="font-semibold text-[15px]">Diagnostic test: </span>
+          <div class="pl-2">
+            <select id="subject" name="subject"
+              class="text-[14px] text-green-500 w-60 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+              <option value="general">Please Select</option>
+              <option value="Pathology">
+                National Plant Pathology Research Centre
+              </option>
+              <option value="Entomology">
+                National Entomology Research Centre
+              </option>
+              <option value="Lab">Central Lab</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex justify-between">
+          <span class="font-semibold text-[15px]">Suspected Problem:</span>
+          <div class="pl-2">
+            <select id="subject" name="subject"
+              class="text-[14px] text-green-500 w-44 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+              <option value="general">Please Select</option>
+              <option value="support">Ram Bahadur</option>
+              <option value="feedback">Hari Shah</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center mt-7">
+        <div class="flex">
+          <span class="font-semibold text-[15px]">Host: </span>
+          <div class="pl-2">
+            <select id="subject" name="subject"
+              class="text-[14px] text-green-500 w-60 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+              <option value="general">Please Select</option>
+              <option value="Pathology">
+                National Plant Pathology Research Centre
+              </option>
+              <option value="Entomology">
+                National Entomology Research Centre
+              </option>
+              <option value="Lab">Central Lab</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center">
+          <span class="font-semibold text-[15px]">Cultivar:</span>
+          <div class="pl-2">
+            <input type="text" id="text" name="text"
+              class="text-green-500 w-72 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <div class="w-full bg-white rounded">
+          <button id="showButtonId" type="button" class="bg-green-500 text-white px-4 py-2 rounded mr-2">
+            Show Physical Sample :
+          </button>
+          <button id="hideButtonId" type="button" class="bg-green-700 text-white px-4 py-2 rounded custom-hidden-class">
+            Hide Physical Sample :
+          </button>
+          <div id="hiddenContentId" class="mt-4 custom-hidden-class">
+            <div class="flex justify-between items-center mt-7">
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-[15px]">Field/Reference ID:</span>
+                <div class="pl-2">
+                  <input type="text" id="text" name="text"
+                    class="text-green-500 w-44 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="font-semibold text-[15px]">Sample source:</span>
+                <div class="pl-2">
+                  <input type="text" id="text" name="text"
+                    class="text-green-500 w-60 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between mt-7">
+              <span class="font-semibold text-[15px]">Sample Materials Submitted:
+              </span>
+              <div class="pt-2">
+                <select id="subject" name="subject"
+                  class="text-[14px] text-green-500 w-96 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+                  <option value="general">Please Select</option>
+                  <option value="Pathology">
+                    National Plant Pathology Research Centre
+                  </option>
+                  <option value="Entomology">
+                    National Entomology Research Centre
+                  </option>
+                  <option value="Lab">Central Lab</option>
+                </select>
+              </div>
+            </div>
+            <div class="flex justify-between items-center mt-7">
+              <div class=" ">
+                <h2 class="font-semibold text-[15px]">
+                  Sample Collected<span class="text-red-500">*</span>
+                </h2>
+                <div class="pt-2">
+                  <span class="mt-2 text-xs">Date:</span>
+                  <input type="date" id="date" name="date"
+                    class="text-[14px] text-green-500 w-28 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                </div>
+              </div>
+              <div class="  ">
+                <h2 class="font-semibold text-[15px]">
+                  Physical Sample Received<span class="text-red-500">*</span>
+                </h2>
+                <div class="pt-2">
+                  <span class="mt-2 text-xs">Date:</span>
+
+                  <input type="date" id="date" name="date"
+                    class="text-[14px] text-green-500 w-28 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                </div>
+              </div>
+              <div class="">
+                <span class="font-semibold text-[15px]">Sample Materials Submitted<span class="text-red-500">*</span>
+                </span>
+                <div class="pt-2">
+                  <span class="mt-2 text-xs">District:</span>
+                  <select id="subject" name="subject"
+                    class="text-[14px] text-green-500 w-44 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+                    <option value="general">Please Select</option>
+                    <option value="Pathology">
+                      National Plant Pathology Research Centre
+                    </option>
+                    <option value="Entomology">
+                      National Entomology Research Centre
+                    </option>
+                    <option value="Lab">Central Lab</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="flex justify-between items-center mt-7">
+              <div class="">
+                <span class="font-semibold text-[15px]">Country<span class="text-red-500">*</span> :</span>
+                <div class="">
+                  <input type="text" id="text" name="text"
+                    class="text-green-500 w-56 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                </div>
+              </div>
+              <div class="">
+                <span class="font-semibold text-[15px]">Province/State :
+                </span>
+                <div class="pt-2">
+                  <select id="subject" name="subject"
+                    class="text-[14px] text-green-500 w-56 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+                    <option value="general">Please Select</option>
+                    <option value="Pathology">
+                      National Plant Pathology Research Centre
+                    </option>
+                    <option value="Entomology">
+                      National Entomology Research Centre
+                    </option>
+                    <option value="Lab">Central Lab</option>
+                  </select>
+                </div>
+              </div>
+              <div class="">
+                <span class="font-semibold text-[15px]">Zip code :</span>
+                <div class="">
+                  <input type="text" id="text" name="text"
+                    class="text-green-500 w-56 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                </div>
+              </div>
+            </div>
+
+
+            <div class="flex justify-between items-center mt-7">
+              <div class="">
+                <span class="font-semibold text-[15px]">Altitude :</span>
+                <div class="">
+                  <input type="text" id="text" name="text"
+                    class="text-green-500 w-56 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                </div>
+              </div>
+              <div class="">
+                <span class="font-semibold text-[15px]">Latitude :</span>
+                <div class="">
+                  <input type="text" id="text" name="text"
+                    class="text-green-500 w-56 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                </div>
+              </div>
+              <div class="">
+                <span class="font-semibold text-[15px]">Longitude :</span>
+                <div class="">
+                  <input type="text" id="text" name="text"
+                    class="text-green-500 w-56 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="mt-4" />
+
+      <h3 class="text-xl font-semibold mt-8 mb-4">Diagnostics & NPDN</h3>
+      <h5 class="mb-1 text-gray-500">New Diagnosis/ ID Information</h5>
+      <hr />
+      <h5 class="mt-6 mb-1 text-gray-500">Diagnosis/ ID1</h5>
+      <hr />
+
+      <!-- genus -->
+      <div class="flex justify-between mt-4 items-center">
+        <span class="font-semibold text-[15px]">Enter the diagnosis name :
+        </span>
+        <input type="text" id="text" name="text"
+          class="text-green-500 w-8/12 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+      </div>
+      <div class="flex justify-between items-center mt-7">
+        <div class="">
+          <span class="font-semibold text-[15px]">Genus : </span>
+          <div class="pt-2">
+            <select id="subject" name="subject"
+              class="text-[14px] text-green-500 w-80 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+              <option value="general">Please Select</option>
+              <option value="Pathology">
+                National Plant Pathology Research Centre
+              </option>
+              <option value="Entomology">
+                National Entomology Research Centre
+              </option>
+              <option value="Lab">Central Lab</option>
+            </select>
+          </div>
+        </div>
+        <div class="">
+          <span class="font-semibold text-[15px]">Species : </span>
+          <div class="pt-2">
+            <select id="subject" name="subject"
+              class="text-[14px] text-green-500 w-80 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+              <option value="general">Please Select</option>
+              <option value="Pathology">
+                National Plant Pathology Research Centre
+              </option>
+              <option value="Entomology">
+                National Entomology Research Centre
+              </option>
+              <option value="Lab">Central Lab</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between items-center mt-7">
+        <div class="">
+          <span class="font-semibold text-[15px]">Sub-species : </span>
+          <div class="pt-2">
+            <select id="subject" name="subject"
+              class="text-[14px] text-green-500 w-80 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+              <option value="general">Please Select</option>
+              <option value="Pathology">
+                National Plant Pathology Research Centre
+              </option>
+              <option value="Entomology">
+                National Entomology Research Centre
+              </option>
+              <option value="Lab">Central Lab</option>
+            </select>
+          </div>
+        </div>
+        <div class="">
+          <span class="font-semibold text-[15px]">Lab Methods : </span>
+          <div class="pt-2">
+            <select id="subject" name="subject"
+              class="text-[14px] text-green-500 w-80 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+              <option value="general">Please Select</option>
+              <option value="Pathology">
+                National Plant Pathology Research Centre
+              </option>
+              <option value="Entomology">
+                National Entomology Research Centre
+              </option>
+              <option value="Lab">Central Lab</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <!--  -->
+      <div class="">
+        <div class="">
+          <div class="bg-white p-4 rounded">
+            <button id="showButton" type="button" class="bg-green-500 text-white px-4 py-2 rounded mr-2">
+              Insects :
+            </button>
+            <button id="hideButton" type="button" class="bg-green-700 text-white px-4 py-2 rounded hidden">
+          Hide Insects :    
+            </button>
+            <div id="content" class="mt-4 hidden">
+              <div class="mt-8 wf">
+                <div>
+                  <span class="font-bold text-[15px]">Insects </span>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex mt-4 items-center">
+                    <div class="">
+                      <span class="font-semibold text-[15px] text-gray-500">Name of Insect :</span>
+                      <br />
+                      <input type="text" id="text" name="text"
+                        class="mt-1 text-green-500 w-64 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                    </div>
+                    <div class="ml-12">
+                      <span class="font-semibold text-[15px] text-gray-500">Causing Damage :</span>
+                      <br />
+                      <select id="subject" name="subject"
+                        class="text-[14px] mt-2 w-56 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+                        <option value="general">Yes</option>
+                        <option value="support">No</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="mt-2">
+                    <label for="message" class="block font-semibold mb-1 text-gray-500">Notes :</label>
+                    <textarea id="message" name="message" rows="3"
+                      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-green-700"></textarea>
+                  </div>
+
+                  <div>
+                    <button class="mt-2 text-xs bg-green-500 text-white px-3 py-2 rounded-lg hover:bg-green-700">
+                      ADD ANOTHER
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mt-4 mb-4">
+                    <label for="image" class="block font-semibold mb-1">Add photos</label>
+                    <input type="file" id="image" name="image" class="hidden" />
+                    <label for="image"
+                      class="bg-green-500 text-white font-semibold text-sm px-4 py-2 rounded-lg cursor-pointer hover:bg-green-700">Browse
+                      Files
+                    </label>
+                  </div>
+                  <hr class="mt-2" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+
+        <div class="">
+          <div class="bg-white p-4 rounded">
+            <button id="showBtn" type="button" class="bg-green-500 text-white px-4 py-2 rounded mr-2">
+              Disease Symptoms :
+            </button>
+            <button id="hideBtn" type="button" class="bg-green-700 text-white px-4 py-2 rounded custom-hidden">
+              Hide Disease Symptoms :
+            </button>
+            <div id="contentDiv" class="mt-4 custom-hidden">
+              <div class="mt-8">
+                <div>
+                  <span class="font-bold text-[15px]">Disease Symptoms </span>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex mt-4 items-center">
+                    <div class="">
+                      <span class="font-semibold text-[15px] text-gray-500">Name of Disease :</span>
+                      <br />
+                      <input type="text" id="text" name="text"
+                        class="mt-1 text-green-500 w-64 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                    </div>
+                    <div class="ml-12">
+                      <span class="font-semibold text-[15px] text-gray-500">Causing Damage :</span>
+                      <br />
+                      <select id="subject" name="subject"
+                        class="text-[14px] mt-2 w-56 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+                        <option value="general">Yes</option>
+                        <option value="support">No</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="mt-2">
+                    <label for="message" class="block font-semibold mb-1 text-gray-500">Notes :</label>
+                    <textarea id="message" name="message" rows="3"
+                      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-green-700"></textarea>
+                  </div>
+
+                  <div>
+                    <button class="mt-2 text-xs bg-green-500 text-white px-3 py-2 rounded-lg hover:bg-green-700">
+                      ADD ANOTHER
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mt-4 mb-4">
+                    <label for="image" class="block font-semibold mb-1">Add photos</label>
+                    <input type="file" id="image" name="image" class="hidden" />
+                    <label for="image"
+                      class="bg-green-500 text-white font-semibold text-sm px-4 py-2 rounded-lg cursor-pointer hover:bg-green-700">Browse
+                      Files
+                    </label>
+                  </div>
+                  <hr class="mt-2" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+
+        <div class="">
+          <div class="bg-white p-4 rounded">
+            <button id="toggleShowBtn" type="button" class="bg-green-500 text-white px-4 py-2 rounded mr-2">
+              Weeds :
+            </button>
+            <button id="toggleHideBtn" type="button" class="bg-green-700 text-white px-4 py-2 rounded custom-hide">
+              Hide Weeds :
+            </button>
+            <div id="toggleContentDiv" class="mt-4 custom-hide">
+              <div class="mt-8">
+                <div>
+                  <span class="font-bold text-[15px]">Weeds </span>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex mt-4 items-center">
+                    <div class="">
+                      <span class="font-semibold text-[15px] text-gray-500">Name of weeds :</span>
+                      <br />
+                      <input type="text" id="text" name="text"
+                        class="mt-1 text-green-500 w-64 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+                    </div>
+                    <div class="ml-12">
+                      <span class="font-semibold text-[15px] text-gray-500">Causing Damage :</span>
+                      <br />
+                      <select id="subject" name="subject"
+                        class="text-[14px] mt-2 w-56 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700">
+                        <option value="general">Yes</option>
+                        <option value="support">No</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="mt-2">
+                    <label for="message" class="block font-semibold mb-1 text-gray-500">Notes :</label>
+                    <textarea id="message" name="message" rows="3"
+                      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-green-700"></textarea>
+                  </div>
+
+                  <div>
+                    <button class="mt-2 text-xs bg-green-500 text-white px-3 py-2 rounded-lg hover:bg-green-700">
+                      ADD ANOTHER
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mt-4 mb-4">
+                    <label for="image" class="block font-semibold mb-1">Add photos</label>
+                    <input type="file" id="image" name="image" class="hidden" />
+                    <label for="image"
+                      class="bg-green-500 text-white font-semibold text-sm px-4 py-2 rounded-lg cursor-pointer hover:bg-green-700">Browse
+                      Files
+                    </label>
+                  </div>
+                  <hr class="mt-2 h-1 bg-gray-400" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <hr />
+
+      <div class="flex justify-between mt-10 items-center">
+        <span class="font-semibold text-[15px]">Plant Population :</span>
+        <input type="text" id="text" name="text"
+          class="text-green-500 w-96 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+      </div>
+      <div class="flex justify-between mt-4 items-center">
+        <span class="font-semibold text-[15px]">Number of Good Plants :
+        </span>
+        <input type="text" id="text" name="text"
+          class="text-green-500 w-96 px-2 py-1 border rounded-lg focus:outline-none focus:ring focus:border-green-700" />
+      </div>
+      <div class="mt-4 flex justify-between">
+        <label for="message" class="block font-semibold mb-1">Signature :</label>
+        <div class="mr-40">
+          <textarea id="message" name="message" rows="3"
+            class="w-56 px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-green-700"></textarea>
+          <div class="w-full flex justify-between">
+            <span class="text-xs">Powered by <strong>Jotform Sign</strong></span>
+            <button class="bg-green-500 text-xs text-white px-4 py-1 rounded-lg hover:bg-green-700">
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-4 bg-gray-400 h-1" />
+
+      <div class="flex justify-end mt-4">
+        <button class="mt-2 bg-green-500 text-white text-xl font-semibold px-2 py-1 rounded-lg hover:bg-green-700">
+          Next
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- <div class="border border-gray-300 p-4 rounded-md shadow-md">
+    <label class="block mb-2 font-medium text-gray-700">Signature</label>
+    <div class="w-full h-32 border border-gray-300 rounded-md bg-white flex items-center justify-center">
+    </div>
+    <p class="mt-2 text-sm text-gray-500">Sign above using your mouse or touch screen.</p>
+  </div> -->
+  
+
+  <script>
+    const showButton = document.getElementById("showButton");
+    const hideButton = document.getElementById("hideButton");
+    const content = document.getElementById("content");
+
+    showButton.addEventListener("click", () => {
+      content.classList.remove("hidden");
+      showButton.classList.add("hidden");
+      hideButton.classList.remove("hidden");
+    });
+
+    hideButton.addEventListener("click", () => {
+      content.classList.add("hidden");
+      showButton.classList.remove("hidden");
+      hideButton.classList.add("hidden");
+    });
+
+    //
+    const showBtn = document.getElementById("showBtn");
+    const hideBtn = document.getElementById("hideBtn");
+    const contentDiv = document.getElementById("contentDiv");
+
+    showBtn.addEventListener("click", () => {
+      contentDiv.classList.remove("custom-hidden");
+      showBtn.classList.remove("custom-hidden");
+      showBtn.classList.add("custom-hidden");
+      hideBtn.classList.remove("custom-hidden");
+    });
+
+    hideBtn.addEventListener("click", () => {
+      contentDiv.classList.add("custom-hidden");
+      showBtn.classList.remove("custom-hidden");
+      hideBtn.classList.add("custom-hidden");
+    });
+    //
+    const toggleShowBtn = document.getElementById("toggleShowBtn");
+    const toggleHideBtn = document.getElementById("toggleHideBtn");
+    const toggleContentDiv = document.getElementById("toggleContentDiv");
+
+    toggleShowBtn.addEventListener("click", () => {
+      toggleContentDiv.classList.remove("custom-hide");
+      toggleShowBtn.classList.add("custom-hide");
+      toggleHideBtn.classList.remove("custom-hide");
+    });
+
+    toggleHideBtn.addEventListener("click", () => {
+      toggleContentDiv.classList.add("custom-hide");
+      toggleShowBtn.classList.remove("custom-hide");
+      toggleHideBtn.classList.add("custom-hide");
+    });
+    //
+    const showButtonId = document.getElementById("showButtonId");
+    const hideButtonId = document.getElementById("hideButtonId");
+    const hiddenContentId = document.getElementById("hiddenContentId");
+
+    showButtonId.addEventListener("click", () => {
+      hiddenContentId.classList.remove("custom-hidden-class");
+      showButtonId.classList.add("custom-hidden-class");
+      hideButtonId.classList.remove("custom-hidden-class");
+    });
+
+    hideButtonId.addEventListener("click", () => {
+      hiddenContentId.classList.add("custom-hidden-class");
+      showButtonId.classList.remove("custom-hidden-class");
+      hideButtonId.classList.add("custom-hidden-class");
+    });
+  </script>
+</body>
+
+</html>
